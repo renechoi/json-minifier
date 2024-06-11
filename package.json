@@ -1,0 +1,39 @@
+{
+  "name": "json-minifier",
+  "displayName": "JSON Minifier",
+  "description": "A simple extension to minify JSON strings by removing whitespace.",
+  "version": "0.0.2",
+  "publisher": "Renechoi",
+  "engines": {
+    "vscode": "^1.50.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/renechoi/json-minifier"
+  },
+  "activationEvents": [
+    "onCommand:extension.minifyJson"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.minifyJson",
+        "title": "Minify JSON"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "esbuild ./src/extension.ts --bundle --outdir=out --external:vscode --format=cjs",
+    "watch": "esbuild ./src/extension.ts --bundle --outdir=out --external:vscode --format=cjs --watch",
+    "pretest": "npm run compile",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.50.0",
+    "esbuild": "^0.13.0",
+    "typescript": "^4.0.0",
+    "vscode-test": "^1.4.0"
+  }
+}

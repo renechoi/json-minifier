@@ -1,0 +1,24 @@
+.vscode/**
+.vscode-test/**
+out/**
+node_modules/**
+src/**
+.gitignore
+.yarnrc
+esbuild.js
+vsc-extension-quickstart.md
+**/tsconfig.json
+**/.eslintrc.json
+**/*.map
+**/*.ts
+**/.vscode-test.*
+
+# Add your files and directories to ignore during packaging
+node_modules
+.vscode
+out/*
+!out/extension.js
+README.md
+CHANGELOG.md
+.vscodeignore
+

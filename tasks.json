@@ -1,0 +1,35 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "npm: watch",
+        "type": "npm",
+        "script": "watch",
+        "isBackground": true,
+        "problemMatcher": {
+          "owner": "typescript",
+          "source": "ts",
+          "applyTo": "closedDocuments",
+          "fileLocation": ["relative", "${cwd}"],
+          "pattern": [
+            {
+              "regexp": "(^\\s*(\\d+)(,\\d+)*\\s*:\\s*(.*)$)",
+              "line": 1,
+              "column": 2,
+              "message": 4
+            }
+          ],
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": "^\\s*Compiling\\s+\\.\\.\\.",
+            "endsPattern": "^\\s*Watching\\s+for\\s+file\\s+changes\\."
+          }
+        },
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      }
+    ]
+  }
+  
